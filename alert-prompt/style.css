@@ -1,0 +1,12 @@
+body{
+    font-family:sans-sarif;
+    background-color:#de9d9d;
+}
+
+#content{
+    width:125vh;
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}

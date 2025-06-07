@@ -1,0 +1,45 @@
+body{
+    font-family: sans-serif;
+}
+
+header{
+    background-color: #cf6060;
+    top:0;
+}
+
+header div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height:100px;
+    
+}
+
+header div p{
+    padding: 50px;
+}
+
+footer{
+    background-color: #cf6060;
+    bottom:0;
+    position: fixed;
+    height:100px;
+    width: 100%;
+}
+
+footer div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer div p{
+    padding: 50px;
+}
+
+.content{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height: 3000px;
+}
