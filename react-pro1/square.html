@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>welcome page</title>
+    <script src="./react/react.development.js"></script>
+    <script src="./react/react-dom.development.js"></script>
+    <script src="./react/prop-types.js"></script>
+    <script src="./react/babel.min.js"></script>
+</head>
+<body>
+    <div id="tess"></div>
+    
+    <script type="text/babel">
+          function FindSquare(){
+           const [number, setNumber] = React.useState('');
+           const [result, setResult] = React.useState(null);
+
+           function square(n){
+            return n*n;
+           }
+
+           function handleChange(e){
+            let v = e.target.value;
+            setNumber(v);
+            if(!isNaN(v) && v>0){
+            setResult(square(v));
+            }else{
+                setResult(null);
+            }
+           }
+
+           return(
+              <div>
+                <h1>Enter number </h1><br/>
+                <input type="number" value={number} onChange={handleChange} /><br/>
+                {result!=null &&(
+                    <p>the square of {number} is {result} </p>
+                )}
+                </div>
+           
+           );
+        
+        }
+        ReactDOM.render(<FindSquare/>,document.getElementById("tess"));
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scripts</title>
+    <script src="./react/react.development.js"></script>
+    <script src="./react/react-dom.development.js"></script>
+    <script src="./react/prop-types.js"></script>
+    <script src="./react/babel.min.js"></script>
+</head>
+<body>
+    <div id="test"></div>
+    <script type="text/babel">
+        function FactCalci(){
+         const [number, setNumber] = React.useState('');
+         const [result, setResult] = React.useState(null);
+         
+         function fact(n){
+            let res = 1;
+            for(let i=2;i<=n;i++){
+               res*=i;
+            }
+            return res;
+         }
+
+         function handleChange(e){
+            let val = e.target.value;
+            setNumber(parseInt(val));
+            if(!isNaN(val) && val>=0){
+                setResult(fact(val));
+            }else{
+                setResult(null);
+            }
+         }
+
+         return(
+            <div>
+             <h1>this is result form</h1><br/>
+             <label id="num">Enter number: </label><br/>
+             <input type="number" name="num" value={number} onChange={handleChange} />
+             {result!=null&&(
+                <p>The factorial of {number} is {result} </p>
+             )}
+             
+             </div>
+         );
+        }
+        ReactDOM.render(<FactCalci/>,document.getElementById("test"));
+    </script>
+</body>
+</html>
